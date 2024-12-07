@@ -56,7 +56,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./hosts/nix-galago/configuration.nix
+          ./hosts/nix-galago
         ];
       };
     };
