@@ -15,7 +15,7 @@
           owner = "catppuccin";
           repo = "bat";
           rev = "main";
-          sha256 = "";
+          sha256 = "sha256-x1yqPCWuoBSx/cI94eA+AWwhiSA42cLNUOFJl7qjhmw=";
         };
         file = "Catppuccin-mocha.tmTheme";
       };
