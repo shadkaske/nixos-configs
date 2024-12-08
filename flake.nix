@@ -59,6 +59,14 @@
           ./hosts/nix-galago
         ];
       };
+
+      nix-quickemu = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./hosts/nix-quickemu
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
@@ -70,6 +78,13 @@
           # > Our main home-manager configuration file <
           ./home-manager/shadkaske
         ];
+      };
+      "shadkaske@nix-quickemu" = home-manager.lib.homeManagerConfiguration { pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          extraSpecialArgs = {inherit inputs outputs;};
+          modules = [
+            # > Our main home-manager configuration file <
+            ./home-manager/shadkaske
+          ];
       };
     };
   };
