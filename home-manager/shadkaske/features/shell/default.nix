@@ -13,6 +13,7 @@
     ./direnv.nix
     ./fast-syntax-highlighting.nix
     ./fd.nix
+    ./eza.nix
     ./lazygit.nix
     ./bash.nix
     ./starship.nix
