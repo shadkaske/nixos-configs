@@ -2,9 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, config, pkgs, inputs, ... }:
-
 {
+  lib,
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -18,9 +22,6 @@
 
   networking.hostName = "nix-quickemu"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";

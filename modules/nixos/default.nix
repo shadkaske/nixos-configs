@@ -3,5 +3,6 @@
 {
   # List your module files here
   environment = import ./enviroment.nix;
+  network-manager = import ./network-manager.nix;
   # TODO: Move system wide packages here
 }
