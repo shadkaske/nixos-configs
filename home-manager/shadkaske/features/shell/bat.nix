@@ -14,6 +14,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "catppuccin";
           repo = "bat";
+          rev = "main";
+          sha256 = "";
         };
         file = "Catppuccin-mocha.tmTheme";
       };
