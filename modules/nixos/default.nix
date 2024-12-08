@@ -4,5 +4,7 @@
   # List your module files here
   environment = import ./enviroment.nix;
   network-manager = import ./network-manager.nix;
+  nix-settings = import ./nix-settings.nix;
+  locale = import ./locale.nix;
   # TODO: Move system wide packages here
 }
