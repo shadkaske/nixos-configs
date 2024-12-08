@@ -12,5 +12,6 @@
     ./fzf.nix
     ./bash.nix
     ./starship.nix
+    ./bat.nix
   ];
 }
