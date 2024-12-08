@@ -11,6 +11,8 @@
 
     autosuggestion.enable = true;
 
+    dotDir = ".config/zsh";
+
     history = {
       append = true;
       expireDuplicatesFirst = true;
@@ -35,9 +37,9 @@
     # Plugins
     plugins = [
       {
-        name = "zsh-vi-mode";
+        name = "vi-mode";
         src = pkgs.zsh-vi-mode;
-        file = "share/zsh-vi-mode/zsh-vi-mode.plugins.zsh";
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
 
