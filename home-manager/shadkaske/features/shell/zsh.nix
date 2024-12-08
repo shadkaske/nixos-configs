@@ -20,6 +20,13 @@
       enable = true;
     };
 
+    envExtra = ''
+        export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+        export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
+        export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+        export MANROFFOPT="-c"
+    '';
+
     # Plugins
     antidote = {
       enable = true;
