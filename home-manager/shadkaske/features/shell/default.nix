@@ -11,6 +11,7 @@
     ./zsh.nix
     ./fzf.nix
     ./direnv.nix
+    ./fast-syntax-highlighting.nix
     ./bash.nix
     ./starship.nix
     ./bat.nix
