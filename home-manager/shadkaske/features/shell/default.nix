@@ -10,6 +10,7 @@
   imports = [
     ./zsh.nix
     ./fzf.nix
+    ./direnv.nix
     ./bash.nix
     ./starship.nix
     ./bat.nix
