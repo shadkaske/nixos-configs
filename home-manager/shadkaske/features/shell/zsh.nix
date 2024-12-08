@@ -56,9 +56,10 @@
         zstyle ':completion:*' menu no
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -a --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -a --color $realpath'
-	zstyle :omz:plugins:ssh-agent quiet yes
-	zstyle :omz:plugins:ssh-agent helper ksshaskpass
-	zstyle :omz:plugins:ssh-agent agent-forwarding yes
+        zstyle :omz:plugins:ssh-agent quiet yes
+        zstyle :omz:plugins:ssh-agent helper ksshaskpass
+        zstyle :omz:plugins:ssh-agent agent-forwarding yes
+        if [[ -f "$HOME/.config/fsh/catppuccin-mocah.ini" ]]; then fast-theme XDG:catppuccin-mocha > /dev/null fi
       '';
 
      shellAliases = {
