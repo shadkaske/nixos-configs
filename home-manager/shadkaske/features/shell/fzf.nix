@@ -35,7 +35,7 @@
 
     changeDirWidgetCommand = "fd --type d --exclude .steam --hidden --follow . $HOME";
     changeDirWidgetOptions = [
-        "fd  --hidden --exclude .steam --follow . $HOME"
+        "--border-label='Directory Search'"
     ];
 
     fileWidgetCommand = "fd  --hidden --exclude .steam --follow . $HOME";
@@ -44,9 +44,9 @@
         "--preview 'bat {}'"
     ];
 
-    # tmux = {
-    #   enableShellIntegration = true;
-    #   # TODO: Set up fzf Tmux Config
-    # };
+    tmux = {
+      enableShellIntegration = true;
+      # TODO: Set up fzf Tmux Config
+    };
   };
 }
