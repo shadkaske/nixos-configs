@@ -11,10 +11,8 @@
     };
     themes = {
       Catppuccin-mocha = {
-        src = pkgs.fetchFromGitHub {
-          owner = "catppuccin";
-          repo = "bat";
-          rev = "main";
+        src = pkgs.fetchurl {
+          url = "https://github.com/catppuccin/bat/raw/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme";
           sha256 = "sha256-x1yqPCWuoBSx/cI94eA+AWwhiSA42cLNUOFJl7qjhmw=";
         };
         file = "Catppuccin-mocha.tmTheme";
