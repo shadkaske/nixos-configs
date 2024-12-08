@@ -6,16 +6,18 @@
     enable = true;
     extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep  batwatch ];
     config = {
-      theme = "Catppuccin-mocha";
+      theme = "Catppuccin Mocha";
       pager = "less -FR";
     };
     themes = {
       Catppuccin-mocha = {
-        src = pkgs.fetchurl {
-          url = "https://github.com/catppuccin/bat/raw/refs/heads/main/themes/Catppuccin%20Mocha.tmTheme";
-          sha256 = "sha256-UBuh6EeUhD5V9TjAo7hBRaGCt3KjkkO7QDxuaEBzN0s=";
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "bat";
+          rev = "main";
+          sha256 = "sha256-x1yqPCWuoBSx/cI94eA+AWwhiSA42cLNUOFJl7qjhmw=";
         };
-        file = "Catppuccin-mocha.tmTheme";
+        file = "Catppuccin Mocha.tmTheme";
       };
     };
   };
