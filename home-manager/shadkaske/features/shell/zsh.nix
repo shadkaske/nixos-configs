@@ -30,6 +30,7 @@
         "zsh-users/zsh-completions"
         "Aloxaf/fzf-tab"
         "zdharma-continuum/fast-syntax-highlighting"
+        "fdellwing/zsh-bat"
         "getantidote/use-omz"
         "ohmyzsh/ohmyzsh path:plugins/git"
         "ohmyzsh/ohmyzsh path:plugins/systemd"
@@ -48,7 +49,6 @@
 
 # TODO: Configure Bat and Eza
 # Might not need thes plugins
-# fdellwing/zsh-bat
 # z-shell/zsh-eza
 
       initExtra = ''
