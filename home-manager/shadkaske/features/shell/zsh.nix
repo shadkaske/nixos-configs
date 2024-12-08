@@ -59,7 +59,9 @@
         zstyle :omz:plugins:ssh-agent quiet yes
         zstyle :omz:plugins:ssh-agent helper ksshaskpass
         zstyle :omz:plugins:ssh-agent agent-forwarding yes
-        if [[ -f "$HOME/.config/fsh/catppuccin-mocah.ini" ]]; then fast-theme XDG:catppuccin-mocha > /dev/null fi
+        if [[ -f "$HOME/.config/fsh/catppuccin-mocah.ini" ]];
+            then fast-theme XDG:catppuccin-mocha > /dev/null
+        fi
       '';
 
      shellAliases = {
