@@ -77,10 +77,14 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+
+  programs.zsh.enable = true;
+
   users.users.shadkaske = {
     isNormalUser = true;
     description = "Shad Kaske";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINWmWVYaz1cptvq776LxK02T03I6v5McNtoGlAPqd4yL shadkaske@ksk-arch"
     ];
