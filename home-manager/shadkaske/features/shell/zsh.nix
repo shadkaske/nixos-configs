@@ -20,6 +20,10 @@
       enable = true;
     };
 
+    localVariables = [
+        WORDCHARS = ["*?_-.[]~=&;!#$%^(){}<>"]
+    ];
+
     envExtra = ''
         export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
         export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
