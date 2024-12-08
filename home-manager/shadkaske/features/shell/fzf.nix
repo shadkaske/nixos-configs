@@ -29,11 +29,11 @@
         selected-bg = "#45475a";
     };
 
-    historyWidgetOPtions = [
+    historyWidgetOptions = [
         "--border-label='History Search'"
     ];
 
-    changeDirWidgetComand = "fd --type d --exclude .steam --hidden --follow . $HOME";
+    changeDirWidgetCommand = "fd --type d --exclude .steam --hidden --follow . $HOME";
     changeDirWidgetOptions = [
         "fd  --hidden --exclude .steam --follow . $HOME"
     ];
