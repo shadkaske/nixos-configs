@@ -1,4 +1,4 @@
-{
+{...}: {
   time.timeZone = "America/Chicago";
 
   # Select internationalisation properties.
