@@ -6,7 +6,7 @@
     enable = true;
     extraPackages = with pkgs.bat-extras; [ batdiff batman batgrep  batwatch ];
     config = {
-      theme = "Catppuccin Mocha";
+      theme = "Catppuccin-mocha";
       pager = "less -FR";
     };
     themes = {
@@ -17,7 +17,7 @@
           rev = "main";
           sha256 = "sha256-x1yqPCWuoBSx/cI94eA+AWwhiSA42cLNUOFJl7qjhmw=";
         };
-        file = "Catppuccin Mocha.tmTheme";
+        file = "themes/Catppuccin Mocha.tmTheme";
       };
     };
   };
