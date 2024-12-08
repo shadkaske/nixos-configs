@@ -12,6 +12,7 @@
     ./fzf.nix
     ./direnv.nix
     ./fast-syntax-highlighting.nix
+    ./lazygit.nix
     ./bash.nix
     ./starship.nix
     ./bat.nix
