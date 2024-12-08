@@ -21,17 +21,26 @@
     };
 
     localVariables = {
-        WORDCHARS = "*?_-.[]~=&;!#$%^(){}<>";
+      WORDCHARS = "*?_-.[]~=&;!#$%^(){}<>";
     };
 
     envExtra = ''
-        export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
-        export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
-        export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-        export MANROFFOPT="-c"
+      export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+      export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
+      export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+      export MANROFFOPT="-c"
     '';
 
     # Plugins
+    plugins = [
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode.plugins.zsh";
+      }
+    ];
+
+    # Antidote Plugin Manager
     antidote = {
       enable = true;
       plugins = [
@@ -41,6 +50,8 @@
         "Aloxaf/fzf-tab"
         "zdharma-continuum/fast-syntax-highlighting"
         "fdellwing/zsh-bat"
+        "jessarcher/zsh-artisan"
+        "greymd/docker-zsh-completion"
         "getantidote/use-omz"
         "ohmyzsh/ohmyzsh path:plugins/git"
         "ohmyzsh/ohmyzsh path:plugins/systemd"
@@ -51,9 +62,6 @@
         "ohmyzsh/ohmyzsh path:plugins/sudo"
         "ohmyzsh/ohmyzsh path:plugins/ssh-agent"
         "ohmyzsh/ohmyzsh path:plugins/docker-compose"
-        "jeffreytse/zsh-vi-mode"
-        "jessarcher/zsh-artisan"
-        "greymd/docker-zsh-completion"
       ];
     };
 
@@ -76,29 +84,29 @@
       '';
 
      shellAliases = {
-	gs = "git status";
-	gpl = "git pull";
-	gpoat = "git push origin --all && git push origin --tags";
-	lg = "lazygit";
-	fm = "yazi";
-	tsu = "sudo tailscale up --accept-routes";
-	tsd = "sudo tailscale down";
-	lap = "eza -alh | bat -l fs";
-	cl = "clear";
-	v = "nvim";
-	n = "nvim";
-	vim = "nvim";
-	xoff = "sudo phpdismod -s cli xdebug";
-	xon = "sudo phpenmod -s cli xdebug";
-	s = "sesh cn $(sesh l | fzf)";
-	".." = "cd ..";
-	"..." = "cd ../..";
-	"...." = "cd ../../..";
-	gcd = "git checkout $(git config gitflow.branch.develop)";
-	gch = "git checkout $(git config gitflow.prefix.hotfix)";
-	gcr = "git checkout $(git config gitflow.prefix.release)";
-	tinker = "sail artisan tinker";
-	sail = "sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";
+  gs = "git status";
+  gpl = "git pull";
+  gpoat = "git push origin --all && git push origin --tags";
+  lg = "lazygit";
+  fm = "yazi";
+  tsu = "sudo tailscale up --accept-routes";
+  tsd = "sudo tailscale down";
+  lap = "eza -alh | bat -l fs";
+  cl = "clear";
+  v = "nvim";
+  n = "nvim";
+  vim = "nvim";
+  xoff = "sudo phpdismod -s cli xdebug";
+  xon = "sudo phpenmod -s cli xdebug";
+  s = "sesh cn $(sesh l | fzf)";
+  ".." = "cd ..";
+  "..." = "cd ../..";
+  "...." = "cd ../../..";
+  gcd = "git checkout $(git config gitflow.branch.develop)";
+  gch = "git checkout $(git config gitflow.prefix.hotfix)";
+  gcr = "git checkout $(git config gitflow.prefix.release)";
+  tinker = "sail artisan tinker";
+  sail = "sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";
      };
   };
 }
