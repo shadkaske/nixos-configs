@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }: {
   programs.zsh = {
@@ -34,9 +35,9 @@
     # Plugins
     plugins = [
       {
-        name = "vi-mode";
+        name = "zsh-vi-mode";
         src = pkgs.zsh-vi-mode;
-        file = "share/zsh-vi-mode.plugins.zsh";
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugins.zsh";
       }
     ];
 
