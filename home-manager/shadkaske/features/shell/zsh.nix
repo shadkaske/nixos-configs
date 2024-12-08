@@ -20,9 +20,9 @@
       enable = true;
     };
 
-    localVariables = [
-        WORDCHARS = ["*?_-.[]~=&;!#$%^(){}<>"]
-    ];
+    localVariables = {
+        WORDCHARS = "*?_-.[]~=&;!#$%^(){}<>";
+    };
 
     envExtra = ''
         export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
