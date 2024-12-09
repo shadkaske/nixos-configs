@@ -11,6 +11,7 @@
   # You can import other home-manager modules here
   imports = [
     ./features/shell
+    ./features/kitty.nix
   ];
 
   nixpkgs = {

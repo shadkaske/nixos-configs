@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   ...
 }: {
   programs.zsh = {
@@ -41,16 +42,31 @@
         src = pkgs.zsh-vi-mode;
         file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
+      {
+        name = "zsh-autosuggestions";
+	src = pkgs.zsh-autosuggestions;
+	file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+      }
+      {
+      	name = "zsh-history-substring-search";
+	src = pkgs.zsh-history-substring-search;
+	file = "share/zsh-history-substring-search/zsh-history-substring-search.zsh";
+      }
+      {
+        name = "zsh-completions";
+	src = pkgs.zsh-completions;
+      }
+      {
+        name = "fzf-tab";
+	src = pkgs.zsh-fzf-tab;
+	file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
     ];
 
     # Antidote Plugin Manager
     antidote = {
       enable = true;
       plugins = [
-        "zsh-users/zsh-autosuggestions"
-        "zsh-users/zsh-history-substring-search"
-        "zsh-users/zsh-completions"
-        "Aloxaf/fzf-tab"
         "zdharma-continuum/fast-syntax-highlighting"
         "fdellwing/zsh-bat"
         "jessarcher/zsh-artisan"
@@ -84,6 +100,9 @@
         if [[ -f "$HOME/.config/fsh/catppuccin-mocah.ini" ]];
             then fast-theme XDG:catppuccin-mocha > /dev/null
         fi
+        zvm_after_init() {
+            source ${config.programs.fzf.package}/share/fzf/key-bindings.zsh
+        }
       '';
 
      shellAliases = {
