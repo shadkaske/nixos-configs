@@ -97,6 +97,9 @@ nix = let
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable Font Config and install nerd fonts
+  fonts.packages = with pkgs; [ pkgs.nerdfonts ];
+
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
