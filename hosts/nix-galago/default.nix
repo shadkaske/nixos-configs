@@ -76,6 +76,8 @@ nix = let
 
   boot.initrd.luks.devices."luks-345d959c-ffa7-4a03-b387-101b192db8f2".device = "/dev/disk/by-uuid/345d959c-ffa7-4a03-b387-101b192db8f2";
 
+  networking.networkmanager.enable = true;
+
   networking.hostName = "nix-galago";
 
   # Enable the X11 windowing system.
@@ -116,6 +118,23 @@ nix = let
 
   programs.zsh.enable = true;
 
+  time.timeZone = "America/Chicago";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
+  };
+
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     shadkaske = {
@@ -146,6 +165,7 @@ nix = let
     home-manager
   ];
 
+  environment.variables.EDITOR = "nvim";
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {

@@ -2,9 +2,4 @@
 # These should be stuff you would like to share with others, not your personal configurations.
 {
   # List your module files here
-  environment = import ./enviroment.nix;
-  network-manager = import ./network-manager.nix;
-  nix-settings = import ./nix-settings.nix;
-  locale = import ./locale.nix;
-  # TODO: Move system wide packages here
 }

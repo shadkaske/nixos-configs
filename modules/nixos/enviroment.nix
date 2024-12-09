@@ -1,3 +1,2 @@
 {...}:{
-  environment.variables.EDITOR = "nvim";
 }
