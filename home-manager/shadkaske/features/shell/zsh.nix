@@ -44,22 +44,22 @@
       }
       {
         name = "zsh-autosuggestions";
-	src = pkgs.zsh-autosuggestions;
-	file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+	    src = pkgs.zsh-autosuggestions;
+	    file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
       }
       {
       	name = "zsh-history-substring-search";
-	src = pkgs.zsh-history-substring-search;
-	file = "share/zsh-history-substring-search/zsh-history-substring-search.zsh";
+	    src = pkgs.zsh-history-substring-search;
+	    file = "share/zsh-history-substring-search/zsh-history-substring-search.zsh";
       }
       {
         name = "zsh-completions";
-	src = pkgs.zsh-completions;
+	    src = pkgs.zsh-completions;
       }
       {
         name = "fzf-tab";
-	src = pkgs.zsh-fzf-tab;
-	file = "share/fzf-tab/fzf-tab.plugin.zsh";
+	    src = pkgs.zsh-fzf-tab;
+	    file = "share/fzf-tab/fzf-tab.plugin.zsh";
       }
     ];
 
@@ -81,6 +81,7 @@
         "ohmyzsh/ohmyzsh path:plugins/sudo"
         "ohmyzsh/ohmyzsh path:plugins/ssh-agent"
         "ohmyzsh/ohmyzsh path:plugins/docker-compose"
+        "ohmyzsh/ohmyzsh path:plugins/docker"
       ];
     };
 
@@ -106,29 +107,31 @@
       '';
 
      shellAliases = {
-  gs = "git status";
-  gpl = "git pull";
-  gpoat = "git push origin --all && git push origin --tags";
-  lg = "lazygit";
-  fm = "yazi";
-  tsu = "sudo tailscale up --accept-routes";
-  tsd = "sudo tailscale down";
-  lap = "eza -alh | bat -l fs";
-  cl = "clear";
-  v = "nvim";
-  n = "nvim";
-  vim = "nvim";
-  xoff = "sudo phpdismod -s cli xdebug";
-  xon = "sudo phpenmod -s cli xdebug";
-  s = "sesh cn $(sesh l | fzf)";
-  ".." = "cd ..";
-  "..." = "cd ../..";
-  "...." = "cd ../../..";
-  gcd = "git checkout $(git config gitflow.branch.develop)";
-  gch = "git checkout $(git config gitflow.prefix.hotfix)";
-  gcr = "git checkout $(git config gitflow.prefix.release)";
-  tinker = "sail artisan tinker";
-  sail = "sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";
+        gs = "git status";
+        gpl = "git pull";
+        gpoat = "git push origin --all && git push origin --tags";
+        lg = "lazygit";
+        fm = "yazi";
+        tsu = "sudo tailscale up --accept-routes";
+        tsd = "sudo tailscale down";
+        lap = "eza -alh | bat -l fs";
+        cl = "clear";
+        v = "nvim";
+        n = "nvim";
+        vim = "nvim";
+        xoff = "sudo phpdismod -s cli xdebug";
+        xon = "sudo phpenmod -s cli xdebug";
+        s = "sesh cn $(sesh l | fzf)";
+        ".." = "cd ..";
+        "..." = "cd ../..";
+        "...." = "cd ../../..";
+	    "-" = "cd -";
+        gcd = "git checkout $(git config gitflow.branch.develop)";
+        gch = "git checkout $(git config gitflow.prefix.hotfix)";
+        gcr = "git checkout $(git config gitflow.prefix.release)";
+        tinker = "sail artisan tinker";
+        sail = "sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";
+        tree = "eza --tree";
      };
   };
 }
