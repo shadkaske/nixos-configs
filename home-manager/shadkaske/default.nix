@@ -12,6 +12,7 @@
   imports = [
     ./features/shell
     ./features/kitty.nix
+    ./features/neovim
   ];
 
   nixpkgs = {
@@ -43,6 +44,19 @@
     username = "shadkaske";
     homeDirectory = "/home/shadkaske";
   };
+  home.packages = with pkgs; [
+      gcc
+      cmake
+      rustc
+      php
+      php82Packages.composer
+      nodejs_20
+      yarn
+      luajitPackages.jsregexp
+      python312Packages.pynvim
+      python312Packages.pip
+      wl-clipboard
+    ];
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
