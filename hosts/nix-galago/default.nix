@@ -166,6 +166,11 @@ nix = let
     curl
     git
     home-manager
+    python3Full
+    zip
+    unzip
+    wget
+    bitwarden-desktop
   ];
 
   environment.variables.EDITOR = "nvim";
